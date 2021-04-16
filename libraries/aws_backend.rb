@@ -22,6 +22,7 @@ require 'aws-sdk-lambda'
 require 'aws-sdk-organizations'
 require 'aws-sdk-rds'
 require 'aws-sdk-route53'
+require 'aws-sdk-route53resolver'
 require 'aws-sdk-s3'
 require 'aws-sdk-sns'
 require 'aws-sdk-sqs'
@@ -147,6 +148,10 @@ class AwsConnection
 
   def route53_client
     aws_client(Aws::Route53::Client)
+  end
+  
+  def route53resolver_client
+    aws_client(Aws::Route53Resolver::Client)
   end
 
   def service_client
